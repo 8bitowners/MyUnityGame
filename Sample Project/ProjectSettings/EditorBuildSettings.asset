@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Scenes Folder 2/PracticeScene.unity
+    guid: 0b3964a31966a274e85c6aa8678cb87f
+  - enabled: 1
+    path: Assets/Scenes/Scenes Folder 2/SecondaryScene.unity
+    guid: 60675da6a344f5d4db0fefa1e7fffe1a
   m_configObjects: {}
