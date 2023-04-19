@@ -12,7 +12,9 @@ Animator anim;
     {
         anim = GetComponent<Animator>();
     }
-    public float speed; 
+    public float speed;
+    public float horizontalSpeed = 2.0F;
+    public float verticalSpeed = 2.0F; 
     void Update()
     {
         float move = Input.GetAxis ("Vertical");
@@ -20,10 +22,25 @@ Animator anim;
 
         if (Input.GetKey(KeyCode.W)) {
             transform.Translate(0, 0, speed * Time.deltaTime);
+        }
+       
+        if (Input.GetKey(KeyCode.S)) {
+            transform.Translate(0, 0, -(speed * Time.deltaTime));
             
         }
         
-       
+        if (Input.GetKey(KeyCode.A)) {
+            transform.Translate(-(speed * Time.deltaTime), 0, 0);
+            
+        }
         
+        if (Input.GetKey(KeyCode.D)) {
+            transform.Translate((speed * Time.deltaTime), 0, 0);
+            
+        }
+        
+        float h = horizontalSpeed * Input.GetAxis("Mouse X");
+         float v = verticalSpeed * Input.GetAxis("Mouse Y");
+         transform.Rotate(v, h, 0);
     }
 }
