@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class Interactable : MonoBehaviour
 {
@@ -20,21 +19,25 @@ public bool inReach;
     }
 
     void OnTriggerEnter(Collider other) {
-        inReach = true;
+        if (other.gameObject.tag == "Reach") 
+        {
+            inReach = true; 
+           
+        }
     }
 
     void OnTriggerExit(Collider other) {
-        
+        if (other.gameObject.tag == "Reach") {
             inReach = false;
             
-        
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         if (inReach && Input.GetKey(KeyCode.E)) {
-            SceneManager.LoadScene("SecondaryScene");
+            
         }
     }
 }
