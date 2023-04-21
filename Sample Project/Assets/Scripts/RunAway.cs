@@ -26,19 +26,26 @@ public class RunAway : MonoBehaviour
     {
         float distance = Vector3.Distance(transform.position, Player.transform.position);
 
-        while (distance < EnemyDistanceRun) {
-            anim.SetBool("walkForward", true);
+        while (distance > EnemyDistanceRun) {
+            anim.SetBool("WalkForward", false);
+            break;
         }
+
+        while (distance < EnemyDistanceRun) {
+            anim.SetBool("WalkForward", true);
+            break;
+       }
 
         if (distance < EnemyDistanceRun) {
             Vector3 dirToPlayer = transform.position - Player.transform.position; 
 
             Vector3 newPos = transform.position + dirToPlayer.normalized;
 
-           // anim.SetBool("WalkForward", true);
+            anim.SetBool("WalkForward", true);
 
             _agent.SetDestination(newPos);
         }   
+        
         
     }
 }
