@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Scenes Folder 2/SecondaryScene.unity
+- path: Assets/Scenes/Scenes Folder 2/PracticeScene.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
